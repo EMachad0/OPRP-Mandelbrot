@@ -11,8 +11,8 @@ IN=mandelbrot.in
 OUT=out/$ID
 LOG=log/$ID
 
-mkdir $OUT
-mkdir $LOG
+mkdir -p $OUT
+mkdir -p $LOG
 
 echo "ID" $ID
 
