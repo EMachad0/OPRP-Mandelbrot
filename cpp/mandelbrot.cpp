@@ -9,10 +9,14 @@ const int NUM_THREADS = 8;
 int max_row, max_column, max_n;
 char *data, **mat;
 
-void* mandel(void *param) {
-	long long num_threads = (long long) param;
+struct thread_param_t {
+	int tid, num_threads;
+};
 
-	for(int i = 0; i < max_row * max_column; i += num_threads){
+void* mandel(void *param) {
+	thread_param_t* p = (thread_param_t*) param;
+
+	for(int i = p->tid; i < max_row * max_column; i += p->num_threads){
 		int r = i / max_column;
 		int c = i % max_column;
 
@@ -31,7 +35,7 @@ void* mandel(void *param) {
 }
 
 int main(int argc, char* argv[]) {
-	long long num_threads = (argc > 1 ? atoi(argv[1]) : NUM_THREADS);
+	int num_threads = (argc > 1 ? atoi(argv[1]) : NUM_THREADS);
 
 	cin >> max_row >> max_column >> max_n;
 
@@ -42,9 +46,11 @@ int main(int argc, char* argv[]) {
 		mat[i] = data+i*max_column;
 
 	pthread_t thread[num_threads];
+	thread_param_t param[num_threads];
 
 	for (int tid = 0; tid < num_threads; tid++) {
-		pthread_create(&thread[tid], NULL, mandel, (void*) num_threads);
+		param[tid] = {tid, num_threads};
+		pthread_create(&thread[tid], NULL, mandel, (void*) (param+tid));
 	}
 
 	for (int tid = 0; tid < num_threads; tid++) {

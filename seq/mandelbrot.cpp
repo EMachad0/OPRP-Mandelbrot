@@ -10,7 +10,6 @@ int main() {
 	char *data = (char*)malloc(sizeof(char) * max_row * max_column);
 
 	char **mat = (char**)malloc(sizeof(char*) * max_row);
-
 	for (int i = 0; i < max_row; i++)
 		mat[i] = data+i*max_column;
 
