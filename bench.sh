@@ -1,7 +1,7 @@
 #!/bin/bash
 
 RUNS=10
-WARMUP=1
+WARMUP=3
 PARAMETERS="num_threads 1 16"
 
 # Prepare execution
