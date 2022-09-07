@@ -1,6 +1,6 @@
 
 CXX=g++-12
-CXXFLAGS=-O3 -std=c++11 -lpthread -Wall -Wfatal-errors -Wextra -Wno-unused-result
+CXXFLAGS=-Ofast -march=native -std=c++11 -lpthread -Wall -Wfatal-errors -Wextra -Wno-unused-result
 RM=rm -f
 EXEC=mandelbrot
 
