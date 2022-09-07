@@ -51,8 +51,12 @@ cada linha passa pela média do tempo de execução e as linhas verticais repres
 
 ![resultados](resultados/parametrized.png)
 
+O gráfico abaixo demonstra a relação de speed de cada programa em relação ao seu tempo sequencial.
+
 ![resultados](resultados/speedup.png)
 
 Podemos ver claramente o impacto que a paralelização tem no desempenho, no entanto o ganho de performance foi diminuindo conforme mais threads são adicionadas, além disso, não houve ganho nenhum ao adicionar mais threads que a quantidade de cores do processador.
+
+O resultado de diversas otimizações foi um speedup de 650%.
 
 Notasse uma performance equivalente das linguagens Rust e C++.

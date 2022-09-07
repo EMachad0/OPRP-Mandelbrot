@@ -96,10 +96,10 @@ for filename in args.file:
         plt.plot(seq, seq)
 
     times_mean = [b["mean"] for b in results]
-    times_mean = [times_mean[0] / b for b in times_mean]
-    times_stddev = [b["stddev"] for b in results]
+    seq_time = times_mean[0]
+    times_mean = [seq_time / b for b in times_mean]
 
-    plt.errorbar(x=parameter_values, y=times_mean, yerr=times_stddev, capsize=2)
+    plt.plot(parameter_values, times_mean)
 
 plt.xlabel(parameter_name.title().replace("_", " "))
 plt.ylabel("Speedup")

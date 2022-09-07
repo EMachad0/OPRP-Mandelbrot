@@ -29,7 +29,7 @@ RUST_SETUP="cargo build --manifest-path rust/Cargo.toml --release"
 RUST="./rust/target/release/mandelbrot {num_threads} < $IN > $OUT/rust.out"
 
 # Benchmarks
-hyperfine -s "$SEQ_SETUP" -r $RUNS -w $WARMUP -P $PARAMETERS "$SEQ" --export-markdown $LOG/log_seq.md --export-csv $LOG/log_seq.csv --export-json $LOG/log_seq.json #--show-output
+# hyperfine -s "$SEQ_SETUP" -r $RUNS -w $WARMUP -P $PARAMETERS "$SEQ" --export-markdown $LOG/log_seq.md --export-csv $LOG/log_seq.csv --export-json $LOG/log_seq.json #--show-output
 
 hyperfine -s "$CPP_SETUP" -r $RUNS -w $WARMUP -P $PARAMETERS "$CPP" --export-markdown $LOG/log_cpp.md --export-csv $LOG/log_cpp.csv --export-json $LOG/log_cpp.json #--show-output
 
