@@ -51,6 +51,8 @@ cada linha passa pela média do tempo de execução e as linhas verticais repres
 
 ![resultados](resultados/parametrized.png)
 
+![resultados](resultados/speedup.png)
+
 Podemos ver claramente o impacto que a paralelização tem no desempenho, no entanto o ganho de performance foi diminuindo conforme mais threads são adicionadas, além disso, não houve ganho nenhum ao adicionar mais threads que a quantidade de cores do processador.
 
 Notasse uma performance equivalente das linguagens Rust e C++.

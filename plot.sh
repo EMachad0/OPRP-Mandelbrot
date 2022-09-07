@@ -23,3 +23,5 @@ fi
 source plot/venv/bin/activate
 
 python3 plot/plot_parametrized.py $LOG/log_seq.json $LOG/log_cpp.json $LOG/log_rust.json --titles seq,cpp,rust -o plot/parametrized.png
+
+python3 plot/plot_speedup.py $LOG/log_cpp.json $LOG/log_rust.json --titles cpp,rust -o plot/speedup.png
