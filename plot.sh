@@ -23,6 +23,6 @@ fi
 source plot/venv/bin/activate
 
 # python3 plot/plot_parametrized.py $LOG/log_seq.json $LOG/log_cpp.json $LOG/log_rust.json --titles seq,cpp,rust -o plot/parametrized.png
-python3 plot/plot_parametrized.py $LOG/log_cpp.json $LOG/log_rust.json --titles cpp,rust -o plot/parametrized.png
+python3 plot/plot_parametrized.py $LOG/log_cpp.json $LOG/log_rust.json $LOG/log_openmp_static.json $LOG/log_openmp_dynamic.json $LOG/log_openmp_guided.json --titles cpp,rust,openmp_static,openmp_dynamic,openmp_guided -o plot/parametrized.png
 
-python3 plot/plot_speedup.py $LOG/log_cpp.json $LOG/log_rust.json --titles cpp,rust -o plot/speedup.png
+python3 plot/plot_speedup.py $LOG/log_cpp.json $LOG/log_rust.json $LOG/log_openmp_static.json $LOG/log_openmp_dynamic.json $LOG/log_openmp_guided.json --titles cpp,rust,openmp_static,openmp_dynamic,openmp_guided -o plot/speedup.png

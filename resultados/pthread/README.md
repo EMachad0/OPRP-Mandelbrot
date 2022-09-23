@@ -49,11 +49,11 @@ Memory: 16384MiB
 O gráfico abaixo contem os resultados de execução, estão tracados os três programas, estes podem ser identificados pela legenda,
 cada linha passa pela média do tempo de execução e as linhas verticais representam o desvio padrão.
 
-![resultados](resultados/pthread/parametrized.png)
+![resultados](parametrized.png)
 
 O gráfico abaixo demonstra a relação de speed de cada programa em relação ao seu tempo sequencial.
 
-![resultados](resultados/pthread/speedup.png)
+![resultados](speedup.png)
 
 Podemos ver claramente o impacto que a paralelização tem no desempenho, no entanto o ganho de performance foi diminuindo conforme mais threads são adicionadas, além disso, não houve ganho nenhum ao adicionar mais threads que a quantidade de cores do processador.
 
