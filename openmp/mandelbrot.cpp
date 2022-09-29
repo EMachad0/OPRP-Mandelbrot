@@ -16,7 +16,7 @@ int main(int argc, char* argv[]) {
 	for (int i = 0; i < max_row; i++)
 		mat[i] = data+i*max_column;
 
-	#pragma omp parallel for shared(max_row, max_column, max_n, mat)
+	#pragma omp parallel for schedule(runtime) shared(max_row, max_column, max_n, mat)
 	for(int i = 0; i < max_row * max_column; i++){
 		int r = i / max_column;
 		int c = i % max_column;
